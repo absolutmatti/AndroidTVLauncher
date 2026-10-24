@@ -1,0 +1,8 @@
+{
+  "name": "TV Launcher",
+  "description": "Philips Android TV Launcher mit Leanback-Oberfläche, App Drawer (VerticalGridSupportFragment), Favoriten-Verwaltung und Live-Wetter.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

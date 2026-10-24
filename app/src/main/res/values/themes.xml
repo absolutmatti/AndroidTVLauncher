@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Haupt-Theme für den AuraTV Next-Gen Glass Launcher -->
+    <style name="Theme.TvLauncher" parent="Theme.Leanback">
+        <item name="android:windowBackground">@color/tv_background</item>
+        <item name="colorPrimary">@color/tv_accent</item>
+        <item name="colorPrimaryDark">#070913</item>
+        <item name="colorAccent">@color/tv_accent_cyan</item>
+        <item name="android:textColor">@color/tv_text_primary</item>
+        <item name="defaultBrandColor">@color/tv_accent</item>
+    </style>
+
+    <!-- Dialog-Stil für TV -->
+    <style name="TvDialogTheme" parent="android:Theme.DeviceDefault.Dialog.NoActionBar">
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+        <item name="android:textColor">@color/tv_text_primary</item>
+        <item name="colorAccent">@color/tv_accent_cyan</item>
+    </style>
+</resources>

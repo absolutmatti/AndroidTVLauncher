@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/heroCardRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="48dp"
+    android:layout_marginTop="24dp"
+    android:layout_marginEnd="48dp"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_hero_card"
+    android:elevation="12dp"
+    android:orientation="horizontal"
+    android:paddingStart="24dp"
+    android:paddingTop="18dp"
+    android:paddingEnd="24dp"
+    android:paddingBottom="18dp">
+
+    <!-- Linke Spalte: Dynamischer Begrüßungs-Pill & Zuletzt geöffnete App -->
+    <LinearLayout
+        android:id="@+id/heroLeftColumn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <!-- Zeitabhängige Begrüßung (z.B. ✦ GUTEN ABEND) -->
+        <TextView
+            android:id="@+id/heroGreetingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/greeting_evening"
+            android:textAllCaps="true"
+            android:textColor="@color/tv_accent_cyan"
+            android:textSize="11sp"
+            android:letterSpacing="0.12" />
+
+        <TextView
+            android:id="@+id/heroRecentLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/last_app_label"
+            android:textAllCaps="true"
+            android:textColor="@color/tv_text_secondary"
+            android:textSize="12sp"
+            android:letterSpacing="0.08" />
+
+        <!-- Schnellstart-Button für die letzte App -->
+        <LinearLayout
+            android:id="@+id/heroRecentAppButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_hero_recent_btn"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:minHeight="52dp"
+            android:orientation="horizontal"
+            android:paddingStart="14dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="6dp">
+
+            <ImageView
+                android:id="@+id/heroRecentAppIcon"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:contentDescription="@string/last_app_label"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_app_default" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/heroRecentAppName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="1"
+                    android:maxWidth="260dp"
+                    android:text="@string/no_recent_app"
+                    android:textColor="@color/tv_text_primary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/heroRecentAppSubtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="Klicke zum Fortsetzen"
+                    android:textColor="@color/tv_text_secondary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Subtiler Trenner -->
+    <View
+        android:layout_width="1dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@color/tv_divider" />
+
+    <!-- Rechte Spalte: Live-Wetter, Uhrzeit & Control-Orbs -->
+    <LinearLayout
+        android:id="@+id/heroRightColumn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1.2"
+        android:gravity="end|center_vertical"
+        android:orientation="horizontal">
+
+        <!-- Live-Wetteranzeige -->
+        <LinearLayout
+            android:id="@+id/heroWeatherContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_hero_recent_btn"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="6dp">
+
+            <ImageView
+                android:id="@+id/heroWeatherIcon"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:contentDescription="Wetter-Symbol"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_weather_placeholder" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/heroWeatherTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-bold"
+                    android:text="--°C"
+                    android:textColor="@color/tv_text_primary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/heroWeatherDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif"
+                    android:maxLines="1"
+                    android:maxWidth="140dp"
+                    android:text="@string/weather_loading"
+                    android:textColor="@color/tv_text_secondary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Uhrzeit & Datum -->
+        <LinearLayout
+            android:id="@+id/heroClockContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextClock
+                android:id="@+id/heroTextClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-bold"
+                android:format24Hour="HH:mm"
+                android:format12Hour="hh:mm a"
+                android:textColor="@color/tv_text_primary"
+                android:textSize="40sp" />
+
+            <TextClock
+                android:id="@+id/heroTextDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:format24Hour="EEEE, d. MMMM"
+                android:format12Hour="EEEE, d. MMMM"
+                android:textColor="@color/tv_text_secondary"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Sprachsuche-Orb -->
+        <FrameLayout
+            android:id="@+id/heroVoiceSearchButton"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_voice_search_btn"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/voice_search_title"
+                android:src="@drawable/ic_mic" />
+        </FrameLayout>
+
+        <!-- App Drawer Orb -->
+        <FrameLayout
+            android:id="@+id/heroAppDrawerButton"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/bg_hero_recent_btn"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/app_drawer_title"
+                android:src="@drawable/ic_apps_grid" />
+        </FrameLayout>
+
+        <!-- Einstellungs-Orb -->
+        <FrameLayout
+            android:id="@+id/heroSettingsButton"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/bg_hero_recent_btn"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/settings_title"
+                android:src="@drawable/ic_settings_gear" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

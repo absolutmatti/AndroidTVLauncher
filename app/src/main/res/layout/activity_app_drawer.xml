@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appDrawerRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tv_background"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingStart="48dp"
+    android:paddingTop="24dp"
+    android:paddingEnd="48dp"
+    android:paddingBottom="16dp">
+
+    <!-- Kopfzeile: Titel, Filter-Kategorien & App-Zähler -->
+    <LinearLayout
+        android:id="@+id/drawerHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- Zurück- / Home-Button (D-Pad fokussierbar) -->
+        <FrameLayout
+            android:id="@+id/btnDrawerBack"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_hero_recent_btn"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:nextFocusRight="@id/chipCategoryAll"
+            android:nextFocusDown="@id/drawerFragmentContainer">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/dialog_cancel"
+                android:src="@drawable/ic_apps_grid" />
+        </FrameLayout>
+
+        <!-- Titel & Untertitel -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvDrawerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-bold"
+                android:text="@string/app_drawer_title"
+                android:textColor="@color/tv_text_primary"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tvDrawerSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="@string/app_drawer_subtitle"
+                android:textColor="@color/tv_text_secondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Kategorie-Filter Chips (Alle, Favoriten, Streaming, Produktivität) -->
+        <LinearLayout
+            android:id="@+id/categoryFilterContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Chip 1: Alle Apps -->
+            <TextView
+                android:id="@+id/chipCategoryAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_filter_chip"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="sans-serif-medium"
+                android:minHeight="40dp"
+                android:gravity="center"
+                android:nextFocusLeft="@id/btnDrawerBack"
+                android:nextFocusRight="@id/chipCategoryFavorites"
+                android:nextFocusDown="@id/drawerFragmentContainer"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:text="@string/category_all"
+                android:textColor="@color/tv_text_primary"
+                android:textSize="13sp" />
+
+            <!-- Chip 2: Favoriten -->
+            <TextView
+                android:id="@+id/chipCategoryFavorites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_filter_chip"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="sans-serif-medium"
+                android:minHeight="40dp"
+                android:gravity="center"
+                android:nextFocusLeft="@id/chipCategoryAll"
+                android:nextFocusRight="@id/chipCategoryStreaming"
+                android:nextFocusDown="@id/drawerFragmentContainer"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:text="@string/category_favorites"
+                android:textColor="@color/tv_text_primary"
+                android:textSize="13sp" />
+
+            <!-- Chip 3: Streaming & Medien -->
+            <TextView
+                android:id="@+id/chipCategoryStreaming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_filter_chip"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="sans-serif-medium"
+                android:minHeight="40dp"
+                android:gravity="center"
+                android:nextFocusLeft="@id/chipCategoryFavorites"
+                android:nextFocusRight="@id/chipCategoryGames"
+                android:nextFocusDown="@id/drawerFragmentContainer"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:text="@string/category_streaming"
+                android:textColor="@color/tv_text_primary"
+                android:textSize="13sp" />
+
+            <!-- Chip 4: Spiele -->
+            <TextView
+                android:id="@+id/chipCategoryGames"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_filter_chip"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="sans-serif-medium"
+                android:minHeight="40dp"
+                android:gravity="center"
+                android:nextFocusLeft="@id/chipCategoryStreaming"
+                android:nextFocusRight="@id/chipCategoryProductivity"
+                android:nextFocusDown="@id/drawerFragmentContainer"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:text="@string/category_games"
+                android:textColor="@color/tv_text_primary"
+                android:textSize="13sp" />
+
+            <!-- Chip 5: Produktivität & Tools -->
+            <TextView
+                android:id="@+id/chipCategoryProductivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_filter_chip"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="sans-serif-medium"
+                android:minHeight="40dp"
+                android:gravity="center"
+                android:nextFocusLeft="@id/chipCategoryGames"
+                android:nextFocusDown="@id/drawerFragmentContainer"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:text="@string/category_productivity"
+                android:textColor="@color/tv_text_primary"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <!-- App-Zähler Anzeige -->
+        <TextView
+            android:id="@+id/tvDrawerAppCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_hero_recent_btn"
+            android:fontFamily="sans-serif-medium"
+            android:paddingStart="14dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/tv_accent_light"
+            android:textSize="13sp"
+            tools:text="14 Apps" />
+
+    </LinearLayout>
+
+    <!-- Leanback VerticalGridSupportFragment Container -->
+    <FrameLayout
+        android:id="@+id/drawerFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:descendantFocusability="afterDescendants" />
+
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topBarRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="44dp"
+    android:paddingTop="28dp"
+    android:paddingEnd="44dp"
+    android:paddingBottom="12dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:clipToPadding="false">
+
+    <!-- LINKS: Gear, WLAN, Datenanzeige -->
+    <LinearLayout
+        android:id="@+id/topBarLeftGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="start|center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/btnTopSettings"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:tint="#FFFFFF"
+                android:src="@drawable/ic_settings_gear" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/btnTopWifi"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:tint="#FFFFFF"
+                android:src="@drawable/ic_wifi" />
+        </FrameLayout>
+
+        <!-- Dummy Text "Daily: 152.42 MB" wie im Screen. In echt befüllst du dies per Logik -->
+        <TextView
+            android:id="@+id/tvTopWeatherTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Daily: 152.42 MB"
+            android:textColor="#FAFAFA"
+            android:textSize="18sp"
+            android:shadowColor="#4D000000"
+            android:shadowDx="1.0"
+            android:shadowDy="2.0"
+            android:shadowRadius="2.0" />
+
+        <!-- Unsichtbare alte Platzhalter gegen Activity-Crash -->
+        <FrameLayout android:id="@+id/btnTopUser" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
+        <ImageView android:id="@+id/ivTopWeatherIcon" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
+        <FrameLayout android:id="@+id/btnTopNotification" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
+    </LinearLayout>
+
+    <!-- RECHTS: EEEEE d = "Thursday 7", Zeit fett = "13:25" -->
+    <LinearLayout
+        android:id="@+id/topBarRightGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end|bottom"
+        android:orientation="horizontal">
+
+        <TextClock
+            android:id="@+id/clockTopDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:fontFamily="sans-serif"
+            android:format24Hour="EEEE d"
+            android:format12Hour="EEEE d"
+            android:textColor="#F4F4F4"
+            android:textSize="22sp"
+            android:shadowColor="#80000000"
+            android:shadowDx="1.0"
+            android:shadowDy="2.0"
+            android:shadowRadius="3.0" />
+
+        <TextClock
+            android:id="@+id/clockTopTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:fontFamily="sans-serif-medium"
+            android:format24Hour="HH:mm"
+            android:format12Hour="hh:mm"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:shadowColor="#99000000"
+            android:shadowDx="1.0"
+            android:shadowDy="3.0"
+            android:shadowRadius="4.0" />
+    </LinearLayout>
+
+</LinearLayout>

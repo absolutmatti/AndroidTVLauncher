@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">TV Launcher</string>
+    <string name="favorites_title">✦ FAVORITEN</string>
+    <string name="recents_title">⚡ ZULETZT GENUTZT</string>
+    <string name="all_apps_title">❖ ALLE APPS</string>
+    <string name="tools_title">🛠 SYSTEM &amp; WERKZEUGE</string>
+    <string name="settings_title">Einstellungen</string>
+
+    <!-- Begrüßungen & Top-Bar -->
+    <string name="greeting_morning">✦ GUTEN MORGEN</string>
+    <string name="greeting_day">✦ GUTEN TAG</string>
+    <string name="greeting_evening">✦ GUTEN ABEND</string>
+    <string name="greeting_night">✦ GUTE NACHT</string>
+    <string name="wifi_settings_title">WLAN-Einstellungen</string>
+    <string name="user_profile_title">Benutzerprofil</string>
+    <string name="notifications_title">Benachrichtigungen</string>
+    <string name="weather_title">Wetter</string>
+
+    <!-- App Drawer & Kategorien -->
+    <string name="app_drawer_title">App Drawer</string>
+    <string name="app_drawer_subtitle">Alle installierten TV- &amp; Sideload-Apps</string>
+    <string name="app_drawer_action_card">App Drawer</string>
+    <string name="app_drawer_action_card_desc">Alle installierten Apps im Leanback-Raster anzeigen</string>
+    <string name="category_all">Alle Apps</string>
+    <string name="category_favorites">Favoriten</string>
+    <string name="category_streaming">Streaming &amp; Medien</string>
+    <string name="category_games">Spiele</string>
+    <string name="category_productivity">Produktivität &amp; Tools</string>
+    <plurals name="app_count_plural">
+        <item quantity="one">%d App</item>
+        <item quantity="other">%d Apps</item>
+    </plurals>
+    <string name="no_apps_in_category">Keine Apps in dieser Kategorie gefunden</string>
+    <string name="context_menu_title">App-Optionen</string>
+    <string name="action_add_favorite">Zu Favoriten hinzufügen</string>
+    <string name="action_remove_favorite">Aus Favoriten entfernen</string>
+    <string name="action_change_category">Kategorie anpassen</string>
+    <string name="action_app_info">App-Details (System)</string>
+    <string name="action_uninstall">App deinstallieren</string>
+    <string name="action_change_icon">Eigenes Icon wählen</string>
+    <string name="action_reset_icon">Standard-Icon wiederherstellen</string>
+    <string name="category_auto">Automatisch (Erkannt)</string>
+    <string name="category_saved">Kategorie für %s aktualisiert.</string>
+
+    <!-- Sprachsuche (Home-Screen & Mikrofon) -->
+    <string name="voice_search_title">Sprachsuche</string>
+    <string name="voice_search_prompt">Sprechen… z. B. „Wetter“ oder „YouTube“</string>
+    <string name="voice_search_listening">Ich höre zu…</string>
+    <string name="voice_search_processing">Wird verarbeitet…</string>
+    <string name="voice_search_no_results">Keine passende App oder Wetterinformation für „%s“ gefunden.</string>
+    <string name="voice_search_weather_result">Wetter in %1$s: %2$s, %3$s.</string>
+    <string name="voice_search_app_launching">Starte %s…</string>
+    <string name="voice_search_permission_needed">Mikrofon-Berechtigung wird für die Sprachsuche benötigt.</string>
+    <string name="voice_search_matched_apps">Gefundene Anwendungen:</string>
+
+    <!-- Einstellungen -->
+    <string name="settings_category_apps">App-Verwaltung</string>
+    <string name="settings_show_system_apps">System-Apps anzeigen</string>
+    <string name="settings_show_system_apps_desc">Zeigt auch Hintergrund- und Systempakete in der Liste an</string>
+    <string name="settings_recents_mode">Zuletzt genutzte Apps</string>
+    <string name="settings_recents_mode_desc">Legt fest, wo zuletzt geöffnete Apps erscheinen</string>
+    <string name="settings_recents_off">Aus</string>
+    <string name="settings_recents_hero_only">Nur Hero-Kachel</string>
+    <string name="settings_recents_row_only">Nur separate Reihe</string>
+    <string name="settings_recents_both">Hero &amp; Reihe (Standard)</string>
+    
+    <string name="settings_reorder_apps">App-Reihenfolge anpassen</string>
+    <string name="settings_reorder_apps_desc">Verschiebe Apps nach oben oder unten</string>
+
+    <string name="settings_category_general">Allgemein &amp; Reset</string>
+    <string name="settings_reset">Auf Standardeinstellungen zurücksetzen</string>
+    <string name="settings_reset_desc">Löscht Favoriten, Sortierung und benutzerdefinierte Icons</string>
+    <string name="settings_reset_confirm">Möchtest du wirklich alle Launcher-Einstellungen und Favoriten zurücksetzen?</string>
+    <string name="settings_reset_done">Einstellungen wurden zurückgesetzt.</string>
+
+    <!-- Hero-Karte & Wetter -->
+    <string name="last_app_label">Zuletzt geöffnet</string>
+    <string name="no_recent_app">Noch keine App gestartet</string>
+    <string name="weather_loading">Wetter wird geladen…</string>
+    <string name="weather_unavailable">Wetter nicht verfügbar</string>
+    <string name="weather_no_key">Wetter (Kein API-Key)</string>
+    <string name="weather_city_default">Standort</string>
+    <string name="weather_details_title">Live-Wetterbericht</string>
+    <string name="weather_feels_like_label">Gefühlte Temperatur:</string>
+    <string name="weather_humidity_label">Luftfeuchtigkeit:</string>
+    <string name="weather_wind_label">Windgeschwindigkeit:</string>
+    <string name="weather_refresh_button">Wetter aktualisieren</string>
+    <string name="weather_close_button">Schließen</string>
+
+    <!-- Dialoge & Allgemein -->
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Abbrechen</string>
+    <string name="move_up">Nach vorne</string>
+    <string name="move_down">Nach hinten</string>
+</resources>

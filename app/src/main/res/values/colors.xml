@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- AuraTV Next-Gen Cosmic Glass Farbpalette -->
+    <color name="tv_background">#070913</color>
+    <color name="tv_surface_hero">#121629</color>
+    <color name="tv_surface_card">#161B30</color>
+    <color name="tv_surface_dialog">#1A2038</color>
+    
+    <!-- Neon Akzentfarben -->
+    <color name="tv_accent">#A855F7</color>
+    <color name="tv_accent_variant">#9333EA</color>
+    <color name="tv_accent_glow">#80A855F7</color>
+    <color name="tv_accent_light">#C084FC</color>
+    <color name="tv_accent_cyan">#06B6D4</color>
+    <color name="tv_accent_pink">#EC4899</color>
+    <color name="tv_accent_gold">#F59E0B</color>
+
+    <!-- Texte & Symbole -->
+    <color name="tv_text_primary">#FFFFFF</color>
+    <color name="tv_text_secondary">#94A3B8</color>
+    <color name="tv_text_tertiary">#64748B</color>
+    <color name="tv_divider">#262D4A</color>
+    <color name="tv_border_glass">#2E3654</color>
+    
+    <!-- Leanback Standard Farben-Overrides -->
+    <color name="lb_default_brand_color">#A855F7</color>
+    <color name="lb_browse_title_color">#FFFFFF</color>
+</resources>

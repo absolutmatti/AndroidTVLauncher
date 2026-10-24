@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="480dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog"
+    android:orientation="vertical"
+    android:padding="28dp">
+
+    <!-- Kopfzeile: Icon & Standort -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/dialogWeatherIcon"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:contentDescription="Wetter-Symbol"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_weather_placeholder" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dialogWeatherCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-bold"
+                android:textColor="@color/tv_text_primary"
+                android:textSize="20sp"
+                tools:text="Berlin, DE" />
+
+            <TextView
+                android:id="@+id/dialogWeatherCondition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/tv_text_secondary"
+                android:textSize="14sp"
+                tools:text="Leicht bewölkt" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dialogWeatherTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-bold"
+            android:textColor="@color/tv_accent_light"
+            android:textSize="32sp"
+            tools:text="18°C" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/tv_divider" />
+
+    <!-- Detailinformationen -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:text="@string/weather_feels_like_label"
+                android:textColor="@color/tv_text_secondary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/dialogWeatherFeelsLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/tv_text_primary"
+                android:textSize="14sp"
+                tools:text="17°C" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:text="@string/weather_humidity_label"
+                android:textColor="@color/tv_text_secondary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/dialogWeatherHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/tv_text_primary"
+                android:textSize="14sp"
+                tools:text="65%" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:text="@string/weather_wind_label"
+                android:textColor="@color/tv_text_secondary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/dialogWeatherWind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/tv_text_primary"
+                android:textSize="14sp"
+                tools:text="14 km/h" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dialogWeatherNotice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-italic"
+            android:textColor="@color/tv_accent_light"
+            android:textSize="12sp"
+            android:visibility="gone"
+            tools:text="Hinweis zu API-Key oder Netzwerk"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="18dp"
+        android:background="@color/tv_divider" />
+
+    <!-- Aktions-Buttons (D-Pad steuerbar) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnRefreshWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_dialog_item_selector"
+            android:focusable="true"
+            android:fontFamily="sans-serif-medium"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:text="@string/weather_refresh_button"
+            android:textColor="@color/tv_text_primary"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btnCloseWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_dialog_item_selector"
+            android:focusable="true"
+            android:fontFamily="sans-serif-medium"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:text="@string/weather_close_button"
+            android:textColor="@color/tv_text_secondary"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</LinearLayout>
